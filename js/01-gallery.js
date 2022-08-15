@@ -27,7 +27,9 @@ function createGalleryMarkup(itemsGallery) {
 
 function onGalleryContainerClick(event) {
   event.preventDefault();
-
+ if (event.target.nodeName !== 'IMG') {
+        return;
+    }
   const wayToImg = event.target.dataset.source;
 
   basicLightBoxOpen(wayToImg);
